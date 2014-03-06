@@ -1,0 +1,39 @@
+<style type="text/css">
+    .loadingimage{
+        height: 16px!important;
+        width: 16px!important;
+        margin: 80px 135px!important;
+    }
+    .inputstyle{
+        width: 144px;
+        height: 41px;
+        cursor: pointer;
+        font-size: 30px;
+        outline: medium none;
+        position: absolute;
+        filter:alpha(opacity=0);
+        -moz-opacity:0;
+        opacity:0; 
+        left:0px;
+        top: 0px;
+    }
+</style>
+<script type="text/javascript">
+    var imageUpload = function(){
+        //把图片换成正在上传gif图片
+        $("#thepic").attr('src','{$config_siteurl}statics/images/loading.gif').addClass('loadingimage');
+        $("#uploadImages").submit();
+    }
+    var updataface = function(data){
+        $("#thumb").val(data.url);
+        $("#thepic").removeClass('loadingimage').attr('src',data.url);
+    }
+</script>
+<img id="thepic" src="{$config_siteurl}statics/quankr/images/qq_07.jpg" alt="">
+<div class="fig_l" style="position:relative">
+    <div style="text-align:center;margin-top: 10px;;font-size:15px;font-weight:800" class="upic_btn">上传图片</div>
+    <iframe name="iframebox"  style="display:none" ></iframe>
+    <form name="uploadImages" method="POST" action="{:U('uploadImage')}" id="uploadImages" target="iframebox"  enctype="multipart/form-data" >
+        <input type="file" name="images" class="inputstyle"  onchange="imageUpload()">
+    </form>
+</div>
