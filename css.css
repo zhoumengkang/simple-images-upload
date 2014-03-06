@@ -1,0 +1,18 @@
+    .loadingimage{
+        height: 16px!important;
+        width: 16px!important;
+        margin: 80px 135px!important;
+    }
+    .inputstyle{
+        width: 144px;
+        height: 41px;
+        cursor: pointer;
+        font-size: 30px;
+        outline: medium none;
+        position: absolute;
+        filter:alpha(opacity=0);
+        -moz-opacity:0;
+        opacity:0; 
+        left:0px;
+        top: 0px;
+    }
